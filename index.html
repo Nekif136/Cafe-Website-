@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind | Cafe & Coffee</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #6F4E37; /* Coffee Brown */
+            --secondary-color: #C0A080; /* Latte */
+            --bg-color: #FDFBF7; /* Cream */
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Sections General */
+        section {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Location Section */
+        .location-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .info-box {
+            flex: 1;
+            min-width: 300px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .map-box {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Make the map link button full width in its container */
+        .direction-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+            background-color: #4285F4; /* Google Blue */
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { flex-direction: column; }
+            .nav-links { margin-top: 1rem; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">The Daily Grind</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <h1>Freshly Brewed Coffee</h1>
+        <p>Start your morning with the finest beans in town.</p>
+        <a href="#menu" class="btn">View Menu</a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Our Story</h2>
+        <p style="max-width: 700px; margin: 0 auto;">
+            Welcome to The Daily Grind. We are a cozy community cafe dedicated to sourcing the best sustainable coffee beans and baking fresh pastries daily. Whether you need a quiet corner to work or a place to catch up with friends, we are here to make your day better.
+        </p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Popular Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <h3>Espresso</h3>
+                <p>Strong and bold single shot coffee.</p>
+                <span class="price">$3.00</span>
+            </div>
+            <div class="menu-item">
+                <h3>Cappuccino</h3>
+                <p>Equal parts espresso, steamed milk, and foam.</p>
+                <span class="price">$4.50</span>
+            </div>
+            <div class="menu-item">
+                <h3>Avocado Toast</h3>
+                <p>Freshly smashed avocado on sourdough.</p>
+                <span class="price">$8.00</span>
+            </div>
+            <div class="menu-item">
+                <h3>Blueberry Muffin</h3>
+                <p>Baked fresh every morning.</p>
+                <span class="price">$3.50</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contact">
+        <h2>Find Us</h2>
+        <div class="location-container">
+            <!-- Info Side -->
+            <div class="info-box">
+                <h3>Visit Us</h3>
+                <p><strong>Address:</strong><br>123 Coffee Lane, Cityville</p>
+                <br>
+                <p><strong>Hours:</strong><br>Mon-Fri: 7am - 6pm<br>Sat-Sun: 8am - 8pm</p>
+                <br>
+                <p><strong>Phone:</strong><br>(555) 123-4567</p>
+                
+                <!-- BUTTON TO GOOGLE MAPS LINK -->
+                <a href="https://maps.app.goo.gl/foJ8E3YedHiiKjMA8" target="_blank" class="btn direction-btn">
+                    Get Directions
+                </a>
+            </div>
+
+            <!-- Map Side -->
+            <div class="map-box">
+                <!-- Note: This is a placeholder image. To embed a real map, go to Google Maps > Share > Embed a map -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153169!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577d22432c9a36!2sFederation%20Square!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 The Daily Grind Cafe. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
